@@ -1,0 +1,9 @@
+.menu_footer ul li{
+    list-style-type: none; 
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu_footer{
+    margin-top: 100px;
+}

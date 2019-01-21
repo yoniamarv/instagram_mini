@@ -6,6 +6,9 @@ from datetime import datetime
 from profile_app.forms import SignupForm, LoginForm, ProfileForm, UserForm
 
 
+def home(request):
+    return render(request, 'home.html', context={'home': home})
+
 def signup(request):
     if request.method == 'POST':
 
@@ -32,7 +35,7 @@ def signup(request):
 
         if user is not None:
             login(request, user)
-            return redirect('/profile_app/')
+            return redirect('/profile_app/home/')
 
     return render(request, 'signup.html', context={
         'signup_form': SignupForm(),
@@ -48,14 +51,14 @@ def login_auth(request):
 
         if user is not None:
             login(request, user)
-            return redirect('/profile_app/')
+            return redirect('/profile_app/signup/')
 
     return render(request, 'login.html', context={'login_form': LoginForm()})
 
 
 def logout_auth(request):
     logout(request)
-    return redirect('/profile_app/')
+    return redirect('/profile_app/login/')
 
 
 def list_users(request):
