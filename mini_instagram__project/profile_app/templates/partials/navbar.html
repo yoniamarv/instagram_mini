@@ -1,9 +1,9 @@
-<nav class="navbar navbar-light" style="background-color:black">
-    <a class="navbar-brand text-danger" href="#">
-        <i class="fab fa-spotify"></i>
+<nav class="navbar navbar-light" style="background-color:rgb(255, 255, 255)">
+    <a class="navbar-brand text-dark" href="#">
+        <i class="fab fa-instagram"></i>
         Instagram
     </a>
-    <h2 style="color:red">{{ user.username }}</h2>
+    <h2 style="color:black">{{ user.username }}</h2>
     {% if request.user.is_authenticated %}
     <div class='row'>
         <a href="{% url 'profile_app:logout' %}"><button type="button" class="btn btn-danger mr-3">Logout</button></a>
@@ -23,3 +23,4 @@
     </form>
 </nav>
 <br>
+<hr>

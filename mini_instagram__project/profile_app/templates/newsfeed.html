@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+<head>
+	<title>File D'actualité</title>
+</head>
+<body>
+	<h2>File d'Actualité </h2>
+	  {% if request.user.id == user.id %}
+    <a href="{% url 'profile_app:profile' profile.id %}">Profile</a>
+  {% endif %}
+
+  		{% for post in posts %}
+  			<img src="{{post.picture.url}}">
+			<p>Description: {{post.description}}</p>
+			<p>Date: {{post.date}}</p>
+			<a href="#">{{post.profile}}</a>
+  		{% endfor %}
+
+</body>
+
+		{% include "partials/footer.html" %}
+</html>

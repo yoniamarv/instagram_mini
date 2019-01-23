@@ -1,3 +1,4 @@
+
 .menu_footer ul li{
     list-style-type: none; 
     display: inline-block;
@@ -6,4 +7,8 @@
 
 .menu_footer{
     margin-top: 100px;
+}
+
+.card{
+    font-family: Neue Helvetica;
 }

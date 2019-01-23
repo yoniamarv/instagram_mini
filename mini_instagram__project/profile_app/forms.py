@@ -1,12 +1,13 @@
 from django import forms
 from django.contrib.auth.models import User
-from profile_app.models import Profile
+from profile_app.models import Profile, Post
 
 
 class SignupForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username', 'password', 'first_name', 'last_name', 'email']
+        help_texts = {'username':None}
         widgets = {
             'username': forms.TextInput(attrs={
                 'id': 'signup-username',
@@ -81,3 +82,16 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['picture']
+
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['picture', 'description']
+        widgets = {
+            'description': forms.TextInput(attrs={
+                'id': 'profile-description',
+                'placeholder': 'description',
+                'required': True,
+            }),
+        }

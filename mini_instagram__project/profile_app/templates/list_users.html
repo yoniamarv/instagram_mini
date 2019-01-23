@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Liste Users</title>
+</head>
+
+<body>
+    <h2>Liste Users:</h2>
+
+    {% for user in list_users %}
+    <a href="{% url 'profile_app:profile' user.id %}">{{user.user.username}}</a>
+    {% endfor %}
+</body>
+
+</html>
