@@ -7,22 +7,20 @@
         <div class="row mt-4">
             <div class="col-sm-6 offset-4">
                 <div class="row">
-                    <div class="block_left float-left mr-5"><img style="height: 800px;" src="{% static 'images/insta-pic.jpg' %}"
+                    <div class="block_left float-left mr-5"><img style="height: 780px;" src="{% static 'images/insta-pic.jpg' %}"
                             alt=""></div>
                     <div class="block_right">
                         <div class="col">
-                            <div class="card" style="height: 800px;">
+                            <div class="card" style="height: 750px;">
                                 <img class="card-img-top ml-5" src="{% static 'images/instagram-letter.png' %}" style="width:150px;"
                                     alt=" Card image cap">
                                 <div class="card-body">
                                     <div class="col-lg-1"></div>
-                                    <p class="text-secondary">Sign up to see photos and videos from your
+                                    <p class="text-secondary">Sign up to see photos and videos <br> from your
                                         friends.</p>
                                     <a href="https://www.facebook.com/MyEdensoft" class="btn btn-sm btn-primary">Se
-                                        connecter
-                                        avec
-                                        Facebook</a>
-                                    <div class="row ml-3 mt-2">_________ ou _________</div>
+                                        Log with Facebook</a>
+                                    <div class="row ml-3 mt-2">_________ or _________</div>
                                     <form enctype='multipart/form-data' method="POST">
                                         {% csrf_token %}
                                         <div>{{ signup_form.username |as_crispy_field }}</div>
@@ -41,9 +39,10 @@
                             </div>
                             <div class="card mt-2" style="width: 20rem;">
                                 <div class="card-body">
-                                    Have an account? <a href="#">Log in</a>
+                                    Have an account? <a href="{% url 'profile_app:login' %}">Log in</a>
                                 </div>
                             </div>
+                            {% include "partials/apps.html" %}
                         </div>
                     </div>
                 </div>
